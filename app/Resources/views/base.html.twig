@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tunisia Charity Land{% endblock %}</title>
+
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Eduversity Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+
+    <!--// Meta tag Keywords -->
+    {% block stylesheet %}
+        <!-- css files -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> <!-- Bootstrap-Core-CSS -->
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/> <!-- Style-CSS -->
+        <link rel="stylesheet" href="{{ asset('css/fontawesome-all.css') }}"> <!-- Font-Awesome-Icons-CSS -->
+                                                                              <!-- //css files -->
+
+        <link rel="stylesheet" href="{{ asset('css/jquery.countdown.css') }}"/>
+
+        <!--web font-->
+        <link href="{{ asset('//fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext') }}"
+              rel="stylesheet">
+        <!--//web font-->{% endblock %}
+</head>
+<body>
+{% block header %}
+    <!-- header -->
+    <header>
+        <div class="container">
+            <!-- top header faut le montrer que s'il n'ya pas une session active -->
+            {% block topheader %}
+                {% if  not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <section class="row top_header pt-3">
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-6 buttons">
+
+                            <a href="{{ path('fos_user_security_login') }}">
+                                <button type="button"
+                                        class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2"
+                                        data-toggle="modal"
+                                        aria-pressed="false" data-target="#exampleModal">
+                                    Login
+                                </button>
+                            </a>
+                            <a href="{{ path('fos_user_registration_register') }}">
+                                <button type="button" class="btn btn-info1 btn-lg-block w3ls-btn1 px-4 text-capitalize"
+                                        data-toggle="modal"
+                                        aria-pressed="false">
+                                    Register
+                                </button>
+                            </a>
+                        </div>
+                    </section>
+                {% endif %}
+            {% endblock %}
+            <!-- top header -->
+
+            <!-- nav -->
+            <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+                <!-- logo -->
+                <h1>
+                    <a class="navbar-brand" href="index.html"> <i class="fab fa-affiliatetheme"></i>
+                        Tunisia Charity Land
+                    </a>
+                </h1>
+                <!-- //logo -->
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- main nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-lg-auto text-center">
+                        <li class="nav-item active  mr-lg-3">
+                            <a class="nav-link" href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link" href="about.html">About</a> <!----- LIEN VERS ABOUT ME-->
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link" href="services.html">Campaigns</a><!----- LIEN VERS Campaign-->
+                        </li>
+                        <li class="dropdown nav-item mr-lg-3">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle ">
+                                Pages
+                                <b class="caret"></b>
+                            </a>                                                 <!----- LIEN VERS Page-->
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item">
+                                    <a href="course.html" class="nav-link">Profile</a><!----- LIEN VERS profile-->
+                                </li>
+                                <li class="nav-item">
+                                    <a href="error.html" class="nav-link">404</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" href="contact.html">contact</a><!----- LIEN VERS contact-->
+                        </li>
+                        <!-- search --->
+                        <div class="search-bar-agileits">
+                            <div class="cd-main-header">
+                                <ul class="cd-header-buttons">
+                                    <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                                </ul>
+                                <!-- cd-header-buttons -->
+                            </div>
+                            <div id="cd-search" class="cd-search">
+                                <form action="#" method="post">
+                                    <input name="Search" type="search" placeholder="Click enter after typing...">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- search --->
+                    </ul>
+                </div>
+                <!-- //main nav -->
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+    <!-- //header -->
+    <section class="banner layer" id="home">
+        <div class="container">
+            <div class="banner-text">
+                <div class="slider-info mb-4">
+                    <div class="agileinfo-logo">
+                        <h3>
+                            No one gets poor from giving
+                        </h3>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!---------->
+    <!-- Login modal -->
+
+    <!-- //Login modal -->
+    <!-- Register modal -->
+
+    <!-- //Register modal -->
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+{% endblock %}
+{% block footer %}
+    <footer>
+        <div class="container-fluid p-sm-5 py-5">
+            <div class="row footer-gap">
+                <div class="col-lg-3 col-sm-6">
+                    <h3 class="text-uppercase mb-3">Address</h3>
+                    <address class="mb-0">
+                        <p><strong>Headquarters:</strong></p>
+                        <p class="mb-3"><i class="fas fa-map-marker"></i> 2466H 5th Street Esprit, TechnoPole <br>Block,
+                            Lghazala.</p>
+                        <p><i class="fas fa-clock"></i> Timings : 10 a.m to 6 p.m</p>
+                        <p><i class="fas fa-phone"></i> +216 23 877 515</p>
+                        <p><i class="fas fa-envelope-open"></i> <a href="mailto:info@example.com">info@example.com</a>
+                        </p>
+                        <p><i class="fas fa-fax"></i> +216 23 877 515 </p>
+                    </address>
+                </div>
+                <div class="col-lg-2 col-sm-6 mt-lg-0 mt-sm-0 mt-4 p-md-0">
+                    <h3 class="text-uppercase mb-3">Company</h3>
+                    <div class="links">
+                        <a class="text-capitalize" href="#"> Why Our Company</a>
+                        <a class="pt-2 text-capitalize" href="#"> Documentation</a>
+                        <a class="pt-2 text-capitalize" href="#"> Business</a>
+                        <div class="divider"></div>
+                        <a class="pt-2 text-capitalize" href="#"> Technical support</a>
+                        <a class="pt-2 text-capitalize" href="#"> 24/7 Service</a>
+                        <a class="pt-2 text-capitalize" href="#"> Feedback</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mt-lg-0 mt-sm-5 mt-4 p-md-0">
+                    <h3 class="text-uppercase mb-3">Support</h3>
+                    <div class="links">
+                        <a class="text-capitalize" href="#"> Contact Us</a>
+                        <a class="pt-2 text-capitalize" href="#"> Technical support</a>
+                        <a class="pt-2 text-capitalize" href="#"> 24/7 Service</a>
+                        <div class="divider"></div>
+                        <a class="pt-2 text-capitalize" href="#"> Privacy Policy</a>
+                        <a class="pt-2 text-capitalize" href="#"> Feedback & FAQ's</a>
+                        <a class="pt-2 text-capitalize" href="#"> Terms Of Use</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-sm-6 mt-lg-0 mt-sm-5 mt-4 pr-md-5">
+                    <h3 class="text-uppercase mb-3">Newsletter</h3>
+                    <p class="mb-4">Subscribe to Our Newsletter to get News, Amazing Offers & More</p>
+                    <form action="#" method="post">
+                        <input type="email" name="Email" placeholder="Enter your email..." required="">
+                        <button class="btn1"><i class="far fa-paper-plane"></i></button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 mt-lg-0 mt-sm-5 mt-4">
+                    <h3 class="text-uppercase mb-3"> Follow us</h3>
+                    <p class="mb-4">Follow us on social media</p>
+                    <ul class="social mt-lg-0 mt-3">
+                        <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                        <li class="mr-1"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li class="mr-1"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                        <li class=""><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                        <div class="social-divider"></div>
+                        <li class="mr-1"><a href="#"><span class="fas fa-rss"></span></a></li>
+                        <li class="mr-1"><a href="#"><span class="fab fa-vk"></span></a></li>
+                        <li class="mr-1"><a href="#"><span class="fab fa-vimeo-v"></span></a></li>
+                        <li class=""><a href="#"><span class="fab fa-yahoo"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright pb-5 text-center">
+            <p>© 2018 Tunisia Charity Land. All Rights Reserved | Design by <a href="http://www.W3Layouts.com"
+                                                                               target="_blank">Gucci</a></p>
+        </div>
+    </footer>
+{% endblock %}
+{% block javascripts %}
+
+    <!-- js -->
+    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('js/bootstrap.js') }}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+                                                           <!-- //js -->
+
+                                                           <!-- search-bar -->
+    <script src="{{ asset('js/main.js') }}"></script>
+    <!-- //search-bar -->
+
+    <!-- Countdown-Timer-JavaScript -->
+    <script src="{{ asset('js/simplyCountdown.js') }}"></script>
+    <!-- easy to customize -->
+    <script>
+        $('#simply-countdown-losange').simplyCountdown({
+            year: 2020,
+            month: 1,
+            day: 06
+        });
+    </script>
+    <!-- //Countdown-Timer-JavaScript -->
+
+    <!-- start-smoth-scrolling -->
+    <script src="{{ asset('js/SmoothScroll.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+             var defaults = {
+             containerID: 'toTop', // fading element id
+             containerHoverID: 'toTopHover', // fading element hover id
+             scrollSpeed: 1200,
+             easingType: 'linear'
+             };
+             */
+
+            $().UItoTop({easingType: 'easeOutQuart'});
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- start-smoth-scrolling -->
+    <script>
+
+        function FormShow() {
+
+
+        }
+
+
+    </script>
+{% endblock %}
+</body>
+</html>
