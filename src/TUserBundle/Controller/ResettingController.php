@@ -64,7 +64,7 @@ class ResettingController extends Controller
     }
 
     /**
-     * Request reset user password: show form.
+     * Request reset user password: show Form.
      */
     public function requestAction()
     {
@@ -72,7 +72,7 @@ class ResettingController extends Controller
     }
 
     /**
-     * Request reset user password: submit form and send email.
+     * Request reset user password: submit Form and send email.
      *
      * @param Request $request
      *
@@ -195,7 +195,7 @@ class ResettingController extends Controller
 
         return $this->render('@FOSUser/Resetting/reset.html.twig', array(
             'token' => $token,
-            'form' => $form->createView(),
+            'Form' => $form->createView(),
         ));
     }
 }

@@ -1,6 +1,48 @@
 {% trans_default_domain 'FOSUserBundle' %}
+<!--
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
+<p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+<p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p> -->
+<!-- courses -->
+
+
+        <h3 class="heading text-capitalize mb-lg-5 mb-4"> {{ user.username }} </h3>
+
+        <h3 class="" card-title""> {{ user.email }}</span> </h3>
+        <br>
+<section class="courses py-5">
+    <div class="container py-sm-3">
+        <div class="row course-grids">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('images/Donation_jar.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Donations</h5>
+                        <p class="card-text mb-3">{{ user.username }} has donated 14 times </p>
+                        <a href="contact.html" class="btn btn-primary"> See donations</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('images/campaign_profile.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Campaigns</h5>
+                        <p class="card-text mb-3">{{ user.username }} has participated in 23 campaign</p>
+                        <a href="contact.html" class="btn btn-primary"> See campaigns</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('images/articlesjpg.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Articles</h5>
+                        <p class="card-text mb-3">{{ user.username }} has written 14 articles </p>
+                        <a href="contact.html" class="btn btn-primary"> See articles</a>
+                    </div>
+                </div>
+            </div>
+
+</section>
+<!-- courses -->

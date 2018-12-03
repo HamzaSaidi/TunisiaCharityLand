@@ -1,6 +1,7 @@
 <?php
 
 namespace TUserBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -21,7 +22,17 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
 protected $id;
+    /**
+     * @ORM\OneToMany(targetEntity="DonBundle\Entity\Don", mappedBy="donneur")
+     */
 
+    private $lesdons;
+
+public function __construct()
+{
+    parent::__construct();
+    $this->lesdons=new ArrayCollection();
+}
 
     /**
      * Get id
@@ -31,6 +42,33 @@ protected $id;
     public function getId()
     {
         return $this->id;
+    }
+    /*
+    * @param Don $don
+    *
+    */
+    public function ajouerDon($don)
+    {
+        if (!$this->lesdons->contains($don)) {
+            $this->lesdons[] = $don;
+            $don->setdonneur($this);
+        }
+
+    }
+
+    /*
+     * @param Don $don
+     * @return User
+     */
+    public function supprimerDon($don)
+    {
+
+        if ($this->lesdons->contains($don)) {
+            $this->lesdons->removeElement($don);
+            return $this;
+
+        }
+
     }
 }
 

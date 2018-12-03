@@ -5,10 +5,22 @@
 {% block fos_user_content %}
 
 
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
+    </div>
+    <div class="error_banner py-5">
+        <div class="container py-sm-3">
+            <div class="d-flex agileinfo-error  flex-column">
+                <div class="error_grid">
+                    <h4>{{ 'registration confirmed'|trans({'%username%': user.username}) }}</h4>
+                    <img src="{{ asset('images/telechargement.png') }}" height="30px" width="30px">
+                    {% if targetUrl %}
+                        <p><a href="{{ targetUrl }}">{{ 'registration back'|trans }}</a></p>
+                    {% endif %}                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 {% endblock fos_user_content %}

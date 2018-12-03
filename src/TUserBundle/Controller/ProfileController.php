@@ -101,7 +101,7 @@ class ProfileController extends Controller
         }
 
         return $this->render('@FOSUser/Profile/edit.html.twig', array(
-            'form' => $form->createView(),
+            'Form' => $form->createView(),
         ));
     }
 }

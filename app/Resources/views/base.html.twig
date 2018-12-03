@@ -31,7 +31,7 @@
         <div class="container">
             <!-- top header faut le montrer que s'il n'ya pas une session active -->
             {% block topheader %}
-                {% if  not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {% if  not is_granted("IS_AUTHENTICATED_REMEMBERED") %}<!--si il nest pas conneceteee-->
                     <section class="row top_header pt-3">
                         <div class="col-lg-6">
                         </div>
@@ -54,75 +54,170 @@
                             </a>
                         </div>
                     </section>
+                    <!-- nav -->
+                    <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+                        <!-- logo -->
+                        <h1>
+                            <a class="navbar-brand" href="{{ path('homepage') }}"> <i class="fab fa-affiliatetheme"></i>
+                                Tunisia Charity Land
+                            </a>
+                        </h1>
+                        <!-- //logo -->
+                        <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- main nav -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto text-center">
+
+                                <li class="nav-item active  mr-lg-3">
+                                    <a class="nav-link" href="{{ path('homepage') }}">Home
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-lg-3">
+                                    <a class="nav-link" href="{{ path('about_show') }}">About</a>
+                                    <!----- LIEN VERS ABOUT ME-->
+                                </li>
+
+                                <li class="nav-item mr-lg-3">
+                                    <a class="nav-link" href="#">Blog</a> <!----- LIEN VERS Blog-->
+                                </li>
+
+                                <li class="nav-item mr-lg-3">
+                                    <a class="nav-link" href="services.html">Campaigns</a><!----- LIEN VERS Campaign-->
+                                </li>
+
+                                <!-- search --->
+                                <div class="search-bar-agileits">
+                                    <div class="cd-main-header">
+                                        <ul class="cd-header-buttons">
+                                            <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                                        </ul>
+                                        <!-- cd-header-buttons -->
+                                    </div>
+                                    <div id="cd-search" class="cd-search">
+                                        <form action="#" method="post">
+                                            <input name="Search" type="search"
+                                                   placeholder="Click enter after typing...">
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- search --->
+                            </ul>
+                        </div>
+                        <!-- //main nav -->
+                    </nav>
+
+                {% else %}<!-- si il est connecté-->
+                    <section class="row top_header pt-3">
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-6 buttons">
+
+                            <a href="{{ path('fos_user_security_login') }}">
+                                <button type="button"
+                                        class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2"
+                                        data-toggle="modal"
+                                        aria-pressed="false" data-target="#exampleModal">
+                                    logout
+                                </button>
+
+                        </div>
+                    </section>
+
+                    <!-- nav -->
+                    <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+                        <!-- logo -->
+                        <h1>
+                            <a class="navbar-brand" href="{{ path('homepage') }}"> <i class="fab fa-affiliatetheme"></i>
+                                Tunisia Charity Land
+                            </a>
+                        </h1>
+                        <!-- //logo -->
+                        <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- main nav -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto text-center">
+                                <li class="nav-item active  mr-lg-3">
+                                    <a class="nav-link" href="{{ path('homepage') }}">Home
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-lg-3">
+                                    <a class="nav-link" href="{{ path('about_show') }}">About</a>
+                                    <!----- LIEN VERS ABOUT ME-->
+                                </li>
+                                <li class="nav-item mr-3">
+                                    <a class="nav-link" href="#">Blog</a><!----- LIEN VERS contact-->
+                                </li>
+                                <li class="nav-item mr-lg-3">
+                                    <a class="nav-link" href="services.html">Campaigns</a><!----- LIEN VERS Campaign-->
+                                </li>
+
+                                <li class="dropdown nav-item mr-lg-3">
+                                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle ">
+                                        account
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="nav-item">
+                                            <a href="{{ path('fos_user_profile_show') }}" class="nav-link">profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ path('fos_user_profile_edit') }}" class="nav-link">
+                                                Edit Profile
+                                            </a>
+
+
+                                        </li>
+                                        <li class="nav-item">
+
+                                            <a href="{{ path('fos_user_change_password') }}" class="nav-link">
+                                                Change Password
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item mr-3">
+                                    <a class="nav-link" href="#">Events</a><!----- LIEN VERS contact-->
+                                </li>
+
+
+                                <!-- search --->
+                                <div class="search-bar-agileits">
+                                    <div class="cd-main-header">
+                                        <ul class="cd-header-buttons">
+                                            <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                                        </ul>
+                                        <!-- cd-header-buttons -->
+                                    </div>
+                                    <div id="cd-search" class="cd-search">
+                                        <form action="#" method="post">
+                                            <input name="Search" type="search"
+                                                   placeholder="Click enter after typing...">
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- search --->
+                            </ul>
+                        </div>
+                        <!-- //main nav -->
+                    </nav>
+
+
                 {% endif %}
             {% endblock %}
             <!-- top header -->
 
-            <!-- nav -->
-            <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
-                <!-- logo -->
-                <h1>
-                    <a class="navbar-brand" href="index.html"> <i class="fab fa-affiliatetheme"></i>
-                        Tunisia Charity Land
-                    </a>
-                </h1>
-                <!-- //logo -->
-                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- main nav -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-lg-auto text-center">
-                        <li class="nav-item active  mr-lg-3">
-                            <a class="nav-link" href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mr-lg-3">
-                            <a class="nav-link" href="about.html">About</a> <!----- LIEN VERS ABOUT ME-->
-                        </li>
-                        <li class="nav-item mr-lg-3">
-                            <a class="nav-link" href="services.html">Campaigns</a><!----- LIEN VERS Campaign-->
-                        </li>
-                        <li class="dropdown nav-item mr-lg-3">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle ">
-                                Pages
-                                <b class="caret"></b>
-                            </a>                                                 <!----- LIEN VERS Page-->
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="nav-item">
-                                    <a href="course.html" class="nav-link">Profile</a><!----- LIEN VERS profile-->
-                                </li>
-                                <li class="nav-item">
-                                    <a href="error.html" class="nav-link">404</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="contact.html">contact</a><!----- LIEN VERS contact-->
-                        </li>
-                        <!-- search --->
-                        <div class="search-bar-agileits">
-                            <div class="cd-main-header">
-                                <ul class="cd-header-buttons">
-                                    <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-                                </ul>
-                                <!-- cd-header-buttons -->
-                            </div>
-                            <div id="cd-search" class="cd-search">
-                                <form action="#" method="post">
-                                    <input name="Search" type="search" placeholder="Click enter after typing...">
-                                </form>
-                            </div>
-                        </div>
-                        <!-- search --->
-                    </ul>
-                </div>
-                <!-- //main nav -->
-            </nav>
-            <!-- //nav -->
         </div>
     </header>
     <!-- //header -->
@@ -142,12 +237,7 @@
         </div>
     </section>
     <!---------->
-    <!-- Login modal -->
 
-    <!-- //Login modal -->
-    <!-- Register modal -->
-
-    <!-- //Register modal -->
 
 
 {% endblock %}

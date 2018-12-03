@@ -70,7 +70,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Edit one group, show the edit form.
+     * Edit one group, show the edit Form.
      *
      * @param Request $request
      * @param string  $groupName
@@ -110,13 +110,13 @@ class GroupController extends Controller
         }
 
         return $this->render('@FOSUser/Group/edit.html.twig', array(
-            'form' => $form->createView(),
+            'Form' => $form->createView(),
             'group_name' => $group->getName(),
         ));
     }
 
     /**
-     * Show the new form.
+     * Show the new Form.
      *
      * @param Request $request
      *
@@ -150,7 +150,7 @@ class GroupController extends Controller
         }
 
         return $this->render('@FOSUser/Group/new.html.twig', array(
-            'form' => $form->createView(),
+            'Form' => $form->createView(),
         ));
     }
 

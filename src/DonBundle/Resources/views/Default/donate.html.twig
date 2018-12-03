@@ -1,0 +1,117 @@
+<!-- css files -->
+<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"/> <!-- Style-CSS -->
+<link rel="stylesheet" href="{{ asset('css/fontawesome-all.css') }}"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+
+<link rel="stylesheet" href="{{ asset('css/jquery.countdown.css') }}"/>
+
+<!--web font-->
+<link href="{{ asset('//fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext') }}"
+      rel="stylesheet">
+<!--//web font-->
+
+
+<!-- Donate button-->
+
+
+<button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" data-toggle="modal"
+        aria-pressed="false" data-target="#exampleModal">
+    Donate
+</button>
+
+
+<!-- Donate button-->
+
+
+<!-- Donation Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--------------------------------formulaire-------------------------------------------->
+
+                {{ form_start(FormDonation) }}
+                {{ form_widget(FormDonation) }}
+                <div class="right-w3l mt-4 mb-3">
+                    <input type="submit" class="form-control" value="Donate">
+                </div>
+                {{ form_end(FormDonation) }}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------formulaire-------------------------------------------->
+
+<!-- Donation Modal-->
+<!-- js -->
+<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('js/bootstrap.js') }}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+
+<!-- search-bar -->
+<script src="{{ asset('js/main.js') }}"></script>
+<!-- //search-bar -->
+
+<!-- Countdown-Timer-JavaScript -->
+<script src="{{ asset('js/simplyCountdown.js') }}"></script>
+<!-- easy to customize -->
+<script>
+    $('#simply-countdown-losange').simplyCountdown({
+        year: 2020,
+        month: 1,
+        day: 06
+    });
+</script>
+<!-- //Countdown-Timer-JavaScript -->
+
+<!-- start-smoth-scrolling -->
+<script src="{{ asset('js/SmoothScroll.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+        });
+    });
+</script>
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<!-- start-smoth-scrolling -->
+<script>
+
+    function FormShow() {
+
+
+    }
+
+
+</script>
+}
