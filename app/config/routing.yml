@@ -1,6 +1,5 @@
 don:
-    resource: "@DonBundle/Controller/"
-    type:     annotation
+    resource: "@DonBundle/Resources/config/routing.yml"
     prefix:   /
 
 t_user:
