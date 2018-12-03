@@ -13,12 +13,13 @@
 
 
 <!-- Donate button-->
+<div>
 
-
-<button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" data-toggle="modal"
-        aria-pressed="false" data-target="#exampleModal">
-    Donate
-</button>
+    <button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" data-toggle="modal"
+            aria-pressed="false" data-target="#exampleModal">
+        Donate
+    </button>
+</div>
 
 
 <!-- Donate button-->
@@ -30,7 +31,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Login</h5>
+                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Donation Form</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -39,7 +40,9 @@
                 <!--------------------------------formulaire-------------------------------------------->
 
                 {{ form_start(FormDonation) }}
-                {{ form_widget(FormDonation) }}
+                {{ form_row(FormDonation.category.type) }}
+                {{ form_row(FormDonation.category.amount) }}
+                {{ form_row(FormDonation.category.description) }}
                 <div class="right-w3l mt-4 mb-3">
                     <input type="submit" class="form-control" value="Donate">
                 </div>
@@ -114,4 +117,4 @@
 
 
 </script>
-}
+

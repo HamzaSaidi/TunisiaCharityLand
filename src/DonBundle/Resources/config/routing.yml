@@ -1,0 +1,3 @@
+don_homepage:
+    path:     /
+    defaults: { _controller: DonBundle:Default:index }
