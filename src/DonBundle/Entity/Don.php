@@ -1,35 +1,37 @@
 <?php
 
-
 namespace DonBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
+
 use Doctrine\ORM\Mapping as ORM;
-use TUserBundle\Entity\User;
+
 /**
  * Don
  *
- * @ORM\Table(name="don")
- * @ORM\Entity(repositoryClass="donsBundle\Repository\DonRepository")
+ * @ORM\Table(name="don", indexes={@ORM\Index(name="IDX_F8F081D964C19C1", columns={"category"}), @ORM\Index(name="IDX_F8F081D94493D773", columns={"donneur"})})
+ * @ORM\Entity
  */
 class Don
 {
     /**
-     * @var int
+     * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="lesdons",cascade={"persist"}))
-     * @ORM\JoinColumn(name="category", referencedColumnName="id")
-     */
-    private $category;
-    /**
-     * @var \TUserBundle\Entity\User
+     * @var \DateTime
      *
-     * @ORM\ManyToOne(targetEntity="\TUserBundle\Entity\User")
+     * @ORM\Column(name="createdAt", type="datetime", nullable=false)
+     */
+    private $createdat;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="donneur", referencedColumnName="User")
      * })
@@ -37,87 +39,15 @@ class Don
     private $donneur;
 
     /**
-     * @var \DateTime
+     * @var \Category
      *
-     * @ORM\Column(name="createdAt", type="datetime")
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category", referencedColumnName="id")
+     * })
      */
-    private $createdAt;
+    private $category;
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Don
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-    /*
-     * get Category
-     * @return Category
-     */
-    public function getCategory(){
-
-
-        return $this->category;
-
-    }
-    /*
-    * get Category
-     * @param Category $Category
-    * @return don
-    */
-    public function setCategory($Category)
-    {
-        $this->category=$Category;
-        return $this;
-
-    }
-    /*
-     * get Donneur
-     * @return User
-     */
-    public function getdonneur(){
-
-
-        return $this->donneur;
-
-    }
-    /*
-    * set Donneur
-     * @param User $donneur
-    * @return don
-    */
-    public function setdonneur($donneur)
-    {
-        $this->donneur=$donneur;
-        return $this;
-
-    }
 }
 
